@@ -6,11 +6,14 @@ import { changeSearchField } from './actions/index';
 function Service() {
   const { items, loading, error, search } = useSelector(state => state.skills);
   const dispatch = useDispatch();
+
   const handleSearch = evt => {
     const { value } = evt.target;
     dispatch(changeSearchField(value));
   };
+
   const hasQuery = search.trim() !== '';
+
   return (
     <div className="card" style={{margin:'40px',padding:'20px',width:'60%'}}>
       <div className="mb-3">
